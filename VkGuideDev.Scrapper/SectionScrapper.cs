@@ -7,7 +7,7 @@ public static class SectionScrapper
     private static int _counter;
     
     /// <summary>
-    /// Returns total index of file written
+    /// Returns Count of html files written
     /// </summary>
     /// <param name="plan"></param>
     /// <param name="web"></param>

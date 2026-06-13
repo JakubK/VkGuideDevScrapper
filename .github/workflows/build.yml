@@ -27,8 +27,8 @@ jobs:
           echo "Count: $COUNT"
           
           CMD=(pandoc)
-          for ((i=0; i<=COUNT; i++)); do
-            FILE="file${i}.html"
+          for ((i=0; i<COUNT; i++)); do
+            FILE="${i}.html"
             CMD+=("$FILE")
           done
           

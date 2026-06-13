@@ -32,7 +32,7 @@ jobs:
             CMD+=("$FILE")
           done
           
-          CMD+=(-o "output.pdf")
+          CMD+=(-o "output.pdf" --pdf-engine=xelatex)
 
           ls
 

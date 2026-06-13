@@ -42,8 +42,7 @@ jobs:
           ls
 
       - name: Upload PDF
-        working-directory: VkGuideDev.Scrapper
         uses: actions/upload-artifact@v4
         with:
           name: output-pdf
-          path: output.pdf
+          path: VkGuideDev.Scrapper/output.pdf

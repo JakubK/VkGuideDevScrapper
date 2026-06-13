@@ -50,12 +50,6 @@ jobs:
 
           ls
 
-      # - name: Upload PDF
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: output-pdf
-      #     path: VkGuideDev.Scrapper/output.pdf
-
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}

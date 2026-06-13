@@ -20,7 +20,6 @@ public static class NavigationScrapper
                 continue;
             }
     
-            Console.WriteLine(mainSectionTitle);
             var mainSectionLink = section.FirstChild.Attributes["href"].Value;
             mainSectionLink = $"https:{mainSectionLink}";
             

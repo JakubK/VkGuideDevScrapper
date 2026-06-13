@@ -1,0 +1,32 @@
+name: Build
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Run
+        run: |
+          COUNT=$(dotnet run --project VkGuideDev.Scrapper.csproj)
+          
+          echo "Count: $COUNT"
+          
+          CMD=(pandoc)
+          for ((i=0; i<=COUNT; i++)); do
+            FILE="file${i}.html"
+            CMD+=("$FILE")
+          done
+          
+          CMD+=(-o "output.pdf")
+
+          echo "Running command: ${CMD[*]}"
+          "${CMD[@]}"

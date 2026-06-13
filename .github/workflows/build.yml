@@ -16,7 +16,7 @@ jobs:
 
       - name: Run
         run: |
-          COUNT=$(dotnet run --project VkGuideDev.Scrapper.csproj)
+          COUNT=$(dotnet run --project VkGuideDev.Scrapper.csproj .)
           
           echo "Count: $COUNT"
           
@@ -30,3 +30,9 @@ jobs:
 
           echo "Running command: ${CMD[*]}"
           "${CMD[@]}"
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-pdf
+          path: output.pdf

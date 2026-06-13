@@ -39,6 +39,8 @@ jobs:
           echo "Running command: ${CMD[*]}"
           "${CMD[@]}"
 
+          ls
+
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
